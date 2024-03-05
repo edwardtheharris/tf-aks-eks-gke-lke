@@ -1,3 +1,21 @@
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "3.94.0"
+    }
+  }
+  cloud {
+    organization = "remote-docker-workspace"
+    ## Required for Terraform Enterprise; Defaults to app.terraform.io for Terraform Cloud
+    hostname = "app.terraform.io"
+
+    workspaces {
+      tags = ["kubernetes"]
+    }
+  }
+}
+
 provider "azurerm" {
   features = {}
 }
