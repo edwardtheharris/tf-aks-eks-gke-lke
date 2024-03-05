@@ -17,22 +17,23 @@ terraform {
 }
 
 provider "azurerm" {
-  features = {}
+  skip_provider_registration = true # This is only required when the User, Service Principal, or Identity running Terraform lacks the permissions to register Azure Resource Providers.
+  features {}
 }
 
 variable "resource_group_name" {
   type    = string
-  default = "aks-rg"
+  default = "tf-aks-gh"
 }
 
 variable "aks_cluster_name" {
   type    = string
-  default = "my-aks-cluster"
+  default = "tf-aks"
 }
 
 variable "location" {
   type    = string
-  default = "East US"
+  default = "West US 3"
 }
 
 variable "node_count" {
@@ -63,13 +64,13 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
   }
 
   service_principal {
-    client_id     = ""
-    client_secret = ""
+    client_id     = var.sp_client_id
+    client_secret = var.sp_client_secret
   }
 
-  role_based_access_control {
-    enabled = true
-  }
+  # role_based_access_control {
+  #   enabled = true
+  # }
 
   tags = {
     environment = "dev"

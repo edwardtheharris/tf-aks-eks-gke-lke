@@ -19,9 +19,9 @@ terraform {
 module "aks" {
   source = "./aks"
 
-  resource_group_name = "your-rg-name"
-  aks_cluster_name    = "your-aks-cluster-name"
-  location            = "East US"
+  resource_group_name = "tf-aks-gh"
+  aks_cluster_name    = "tf-aks"
+  location            = "West US 3"
   node_count          = 1
   vm_size             = "Standard_B2s"
 }
