@@ -1,7 +1,7 @@
 variable "sp_client_id" {
-    type = string
+  type = string
 }
 
 variable "sp_client_secret" {
-    type = string
+  type = string
 }
