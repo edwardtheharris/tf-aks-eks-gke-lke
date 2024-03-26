@@ -20,33 +20,18 @@ provider "aws" {
   region = var.aws_region
 }
 
-resource "azurerm_resource_group" "aks_rg" {
-  name     = var.resource_group_name
-  location = var.location
-}
+resource "aws_eks_cluster" "k8s" {
+  name     = "k8s"
+  role_arn = aws_iam_role.k8s.arn
 
-resource "azurerm_kubernetes_cluster" "aks_cluster" {
-  name                = var.aks_cluster_name
-  location            = azurerm_resource_group.aks_rg.location
-  resource_group_name = azurerm_resource_group.aks_rg.name
-  dns_prefix          = var.aks_cluster_name
-
-  default_node_pool {
-    name       = "default"
-    node_count = var.node_count
-    vm_size    = var.vm_size
+  vpc_config {
+    subnet_ids = [aws_subnet.k8s1.id, aws_subnet.k8s2.id]
   }
 
-  service_principal {
-    client_id     = var.sp_client_id
-    client_secret = var.sp_client_secret
-  }
-
-  # role_based_access_control {
-  #   enabled = true
-  # }
-
-  tags = {
-    environment = "dev"
-  }
+  # Ensure that IAM Role permissions are created before and deleted after EKS Cluster handling.
+  # Otherwise, EKS will not be able to properly delete EKS managed EC2 infrastructure such as Security Groups.
+  depends_on = [
+    aws_iam_role_policy_attachment.k8s-AmazonEKSClusterPolicy,
+    aws_iam_role_policy_attachment.k8s-AmazonEKSVPCResourceController,
+  ]
 }
