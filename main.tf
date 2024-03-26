@@ -30,5 +30,4 @@ module "aks" {
 
 module "eks" {
   source = "./eks"
-
 }
