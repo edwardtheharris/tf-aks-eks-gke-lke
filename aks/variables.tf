@@ -19,13 +19,13 @@ variable "resource_group_name" {
 }
 
 variable "sp_client_id" {
-    default = ""
-    type = string
+  default = ""
+  type    = string
 }
 
 variable "sp_client_secret" {
-    default = ""
-    type = string
+  default = ""
+  type    = string
 }
 
 variable "vm_size" {
