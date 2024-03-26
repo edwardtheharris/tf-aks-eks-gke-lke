@@ -16,36 +16,6 @@ terraform {
   }
 }
 
-provider "azurerm" {
-  skip_provider_registration = true # This is only required when the User, Service Principal, or Identity running Terraform lacks the permissions to register Azure Resource Providers.
-  features {}
-}
-
-variable "resource_group_name" {
-  type    = string
-  default = "tf-aks-gh"
-}
-
-variable "aks_cluster_name" {
-  type    = string
-  default = "tf-aks"
-}
-
-variable "location" {
-  type    = string
-  default = "West US 3"
-}
-
-variable "node_count" {
-  type    = number
-  default = 1
-}
-
-variable "vm_size" {
-  type    = string
-  default = "Standard_B2s"
-}
-
 resource "azurerm_resource_group" "aks_rg" {
   name     = var.resource_group_name
   location = var.location
