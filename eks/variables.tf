@@ -14,11 +14,3 @@ variable "AWS_SECRET_ACCESS_KEY" {
   default     = ""
   description = "AWS secret access key"
 }
-
-variable "sp_client_id" {
-  type = string
-}
-
-variable "sp_client_secret" {
-  type = string
-}
