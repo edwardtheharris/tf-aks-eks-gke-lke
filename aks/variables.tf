@@ -1,11 +1,3 @@
-variable "sp_client_id" {
-    type = string
-}
-
-variable "sp_client_secret" {
-    type = string
-}
-
 variable "resource_group_name" {
   type    = string
   default = "tf-aks-gh"

@@ -16,6 +16,11 @@ terraform {
   }
 }
 
+provider "azurerm" {
+  skip_provider_registration = true # This is only required when the User, Service Principal, or Identity running Terraform lacks the permissions to register Azure Resource Providers.
+  features {}
+}
+
 resource "azurerm_resource_group" "aks_rg" {
   name     = var.resource_group_name
   location = var.location
