@@ -9,9 +9,11 @@ title: Terraform AKS / EKS / GKE / LKE
 
 [Azure Kubernetes Service](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/kubernetes_cluster)
 
-A stub of this code has been added to the `aks` folder.
+A stub of this code has been added to the {file}`aks` folder.
 
 ## EKS
+
+A stub of this code has been added to the {file}`eks` folder.
 
 [Elastic Kubernetes Service](https://registry.terraform.io/modules/terraform-aws-modules/eks/aws/latest)
 

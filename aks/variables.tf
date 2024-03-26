@@ -1,8 +1,3 @@
-variable "resource_group_name" {
-  type    = string
-  default = "tf-aks-gh"
-}
-
 variable "aks_cluster_name" {
   type    = string
   default = "tf-aks"
@@ -16,6 +11,21 @@ variable "location" {
 variable "node_count" {
   type    = number
   default = 1
+}
+
+variable "resource_group_name" {
+  type    = string
+  default = "tf-aks-gh"
+}
+
+variable "sp_client_id" {
+    default = ""
+    type = string
+}
+
+variable "sp_client_secret" {
+    default = ""
+    type = string
 }
 
 variable "vm_size" {

@@ -27,3 +27,8 @@ module "aks" {
   node_count          = 1
   vm_size             = "Standard_B2s"
 }
+
+module "eks" {
+  source = "./eks"
+
+}
