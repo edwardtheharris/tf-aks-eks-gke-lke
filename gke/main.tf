@@ -8,17 +8,18 @@ terraform {
 
   cloud {
     organization = "remote-docker-workspace"
-    hostname = "app.terraform.io"
+    hostname     = "app.terraform.io"
 
     workspaces {
-        tags = ["kubernetes", "gke"]
+      tags = ["kubernetes", "gke"]
     }
   }
 }
 
 provider "google" {
   # Configuration options
-  credentials = var.credentials_path
+  credentials = var.gcp_credentials
+  region      = var.region
 }
 
 resource "google_service_account" "k8s" {
@@ -30,6 +31,9 @@ resource "google_container_cluster" "primary" {
   name     = "gke-central"
   location = "us-central1"
 
+  private_cluster_config {
+    master_ipv4_cidr_block = "10.0.0.0/28"
+  }
   # We can't create a cluster with no node pool defined, but we want to only use
   # separately managed node pools. So we create the smallest possible default
   # node pool and immediately delete it.
@@ -49,7 +53,7 @@ resource "google_container_node_pool" "primary_preemptible_nodes" {
 
     # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
     service_account = google_service_account.k8s.email
-    oauth_scopes    = [
+    oauth_scopes = [
       "https://www.googleapis.com/auth/cloud-platform"
     ]
   }
