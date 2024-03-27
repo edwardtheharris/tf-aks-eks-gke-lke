@@ -31,3 +31,7 @@ module "aks" {
 module "eks" {
   source = "./eks"
 }
+
+module "gke" {
+  source = "./gke"
+}
