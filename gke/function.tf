@@ -1,6 +1,9 @@
 resource "google_storage_bucket" "remote-dev" {
   name     = "remote-development-docker-cloud-function"
   location = "US"
+  logging {
+    log_bucket = "remote-development-docker-cloud-function"
+  }
   versioning {
     enabled = true
   }

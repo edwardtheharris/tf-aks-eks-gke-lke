@@ -12,11 +12,13 @@ variable "AWS_SECRET_ACCESS_KEY" {
 variable "member" {
   default = ""
   description = "Function executor"
+  type = string
 }
 
 variable "project_id" {
   default     = ""
   description = "Google Cloud Project ID"
+  type = string
 }
 
 variable "region" {
