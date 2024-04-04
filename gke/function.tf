@@ -32,6 +32,12 @@ resource "google_cloudfunctions_function" "hello-world" {
   }
 }
 
+resource "google_project_iam_member" "invoker" {
+    role = "roles/cloudfunctions.invoker"
+    member = var.member
+    project = var.project_id
+}
+
 # IAM entry for a single user to invoke the function
 resource "google_cloudfunctions_function_iam_member" "invoker" {
   project        = google_cloudfunctions_function.hello-world.project
