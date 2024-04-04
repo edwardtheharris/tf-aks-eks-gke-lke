@@ -19,7 +19,7 @@ terraform {
 provider "google" {
   # Configuration options
   project = var.project_id
-  region      = var.region
+  region  = var.region
 }
 
 resource "google_service_account" "k8s" {

@@ -16,12 +16,12 @@ variable "AWS_SECRET_ACCESS_KEY" {
 }
 
 variable "project_id" {
-  default = ""
+  default     = ""
   description = "Goole Cloud project ID"
 }
 
 variable "region" {
-  default = ""
+  default     = ""
   description = "Google Cloud region"
 }
 
