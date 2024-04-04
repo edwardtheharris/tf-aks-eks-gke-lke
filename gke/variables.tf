@@ -9,6 +9,11 @@ variable "AWS_SECRET_ACCESS_KEY" {
   description = "AWS secret access key"
 }
 
+variable "member" {
+  default = ""
+  description = "Function executor"
+}
+
 variable "project_id" {
   default     = ""
   description = "Google Cloud Project ID"
