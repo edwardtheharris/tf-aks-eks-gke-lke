@@ -1,6 +1,9 @@
 resource "google_storage_bucket" "remote-dev" {
   name     = "remote-development-docker-cloud-function"
   location = "US"
+  versioning {
+    enabled = true
+  }
 }
 
 resource "google_storage_bucket_object" "archive" {
