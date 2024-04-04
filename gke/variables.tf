@@ -1,9 +1,3 @@
-variable "gcp_credentials" {
-  description = "Path to a GCP creds file."
-  sensitive  = true
-  type        = string
-}
-
 variable "AWS_ACCESS_KEY_ID" {
   default     = ""
   description = "Access key ID"

@@ -18,7 +18,7 @@ terraform {
 
 provider "google" {
   # Configuration options
-  credentials = jsonencode(var.gcp_credentials)
+  project = var.project_id
   region      = var.region
 }
 

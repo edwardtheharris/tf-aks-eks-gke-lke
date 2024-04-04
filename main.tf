@@ -41,6 +41,5 @@ module "eks" {
 }
 
 module "gke" {
-  gcp_credentials = jsondecode(var.gcp_credentials)
   source = "./gke"
 }

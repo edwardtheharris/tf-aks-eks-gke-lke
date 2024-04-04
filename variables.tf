@@ -15,11 +15,6 @@ variable "AWS_SECRET_ACCESS_KEY" {
   description = "AWS secret access key"
 }
 
-variable "gcp_credentials"  {
-  description = "GCP Credentials"
-
-}
-
 variable "sp_client_id" {
   type = string
 }
