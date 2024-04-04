@@ -4,7 +4,7 @@ resource "google_storage_bucket" "remote-dev" {
 }
 
 resource "google_storage_bucket_object" "archive" {
-  name   = "index.zip"
+  name   = "hello.zip"
   bucket = google_storage_bucket.remote-dev.name
   source = "./"
 }
