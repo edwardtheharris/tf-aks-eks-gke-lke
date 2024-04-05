@@ -28,6 +28,7 @@ jobs:
           pytest --cov --cov-report=xml
           pylint --output-format=parseable --output=pylint.lint gke/*.py
           sed -i -e "s/project_version/$(cat .version)-$(git rev-parse --short=6 HEAD)/g" sonar-project.properties
+          tflint --recursive -f json > tflint.json
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:

@@ -4,5 +4,6 @@ __pycache__/
 .terraform/
 *.tfvars
 *.xml
+pylint.lint
 pylint.out
 tflint.json
