@@ -47,7 +47,7 @@ No required inputs.
 
 The following input variables are optional (have default values):
 
-### AWS\_ACCESS\_KEY\_ID
+### AWS_ACCESS_KEY_ID
 
 Description: Access key ID
 
@@ -55,7 +55,7 @@ Type: `string`
 
 Default: `""`
 
-### AWS\_SECRET\_ACCESS\_KEY
+### AWS_SECRET_ACCESS_KEY
 
 Description: AWS secret access key
 
@@ -63,7 +63,7 @@ Type: `string`
 
 Default: `""`
 
-### cf\_member
+### cf_member
 
 Description: Function executor
 
@@ -71,7 +71,7 @@ Type: `string`
 
 Default: `""`
 
-### project\_id
+### project_id
 
 Description: Google Cloud Project ID
 
@@ -87,7 +87,7 @@ Type: `string`
 
 Default: `"us-central1"`
 
-### sp\_client\_id
+### sp_client_id
 
 Description: n/a
 
@@ -95,7 +95,7 @@ Type: `string`
 
 Default: `""`
 
-### sp\_client\_secret
+### sp_client_secret
 
 Description: n/a
 
@@ -107,7 +107,7 @@ Default: `""`
 
 The following outputs are exported:
 
-### run\_out
+### run_out
 
 Description: n/a
 <!-- END_TF_DOCS -->
