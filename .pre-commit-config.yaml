@@ -21,5 +21,17 @@ repos:
           - >-
             README.md
         id: terraform-docs-go
+      - args:
+          - >-
+            markdown
+          - >-
+            document
+          - >-
+            --anchor=false
+          - >-
+            --output-file=gke/index.md
+          - >-
+            ./gke/
+        id: terraform-docs-go
     repo: https://github.com/terraform-docs/terraform-docs
     rev: v0.17.0
