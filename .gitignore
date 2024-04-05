@@ -1,4 +1,6 @@
 __pycache__/
-.terraform/
+.coverage
 .terraform.lock.hcl
+.terraform/
 *.tfvars
+*.xml
