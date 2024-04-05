@@ -15,16 +15,16 @@ resource "google_storage_bucket_object" "archive" {
   source = "./"
 }
 
-# IAM entry for a single user to invoke the function
-resource "google_cloudfunctions_function_iam_member" "invoker" {
-  project        = google_cloudfunctions_function.hello-world.project
-  region         = google_cloudfunctions_function.hello-world.region
-  cloud_function = google_cloudfunctions_function.hello-world.name
-
-  role   = "roles/cloudfunctions.invoker"
-  member = var.cf_member
+# IAM entry for members to invoke the function
+resource "google_cloudfunctions_function_iam_binding" "binding" {
+  project = google_cloudfunctions_function.function.project
+  region = google_cloudfunctions_function.function.region
+  cloud_function = google_cloudfunctions_function.function.name
+  role = "roles/viewer"
+  members = [
+    var.cf_member,
+  ]
 }
-
 resource "google_cloudfunctions_function" "hello-world" {
   name        = "helloworld"
   description = "Hello, world!"
@@ -41,9 +41,3 @@ resource "google_cloudfunctions_function" "hello-world" {
     name = "hello-world"
   }
 }
-
-# resource "google_project_iam_member" "invoker" {
-#     role = "roles/cloudfunctions.invoker"
-#     member = var.cf_member
-#     project = var.project_id
-# }

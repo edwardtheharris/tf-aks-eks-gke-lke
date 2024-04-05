@@ -32,7 +32,7 @@ The following resources are used by this module:
 
 - [google_cloud_run_v2_job.hello](https://registry.terraform.io/providers/hashicorp/google/5.22.0/docs/resources/cloud_run_v2_job) (resource)
 - [google_cloudfunctions_function.hello-world](https://registry.terraform.io/providers/hashicorp/google/5.22.0/docs/resources/cloudfunctions_function) (resource)
-- [google_cloudfunctions_function_iam_member.invoker](https://registry.terraform.io/providers/hashicorp/google/5.22.0/docs/resources/cloudfunctions_function_iam_member) (resource)
+- [google_cloudfunctions_function_iam_binding.binding](https://registry.terraform.io/providers/hashicorp/google/5.22.0/docs/resources/cloudfunctions_function_iam_binding) (resource)
 - [google_container_cluster.primary](https://registry.terraform.io/providers/hashicorp/google/5.22.0/docs/resources/container_cluster) (resource)
 - [google_container_node_pool.primary_preemptible_nodes](https://registry.terraform.io/providers/hashicorp/google/5.22.0/docs/resources/container_node_pool) (resource)
 - [google_service_account.k8s](https://registry.terraform.io/providers/hashicorp/google/5.22.0/docs/resources/service_account) (resource)
