@@ -41,8 +41,8 @@ module "eks" {
 }
 
 module "gke" {
+  cf_member = var.cf_member
   project_id = var.project_id
   region = var.region
-  member = var.member
   source = "./gke"
 }

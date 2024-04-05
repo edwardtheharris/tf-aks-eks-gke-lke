@@ -22,7 +22,9 @@ resource "google_cloudfunctions_function_iam_member" "invoker" {
   cloud_function = google_cloudfunctions_function.hello-world.name
 
   role   = "roles/cloudfunctions.invoker"
-  member = var.cf_member
+  member = [
+    var.cf_member
+  ]
 }
 
 resource "google_cloudfunctions_function" "hello-world" {

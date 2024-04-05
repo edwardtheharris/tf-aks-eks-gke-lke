@@ -15,7 +15,7 @@ variable "AWS_SECRET_ACCESS_KEY" {
   description = "AWS secret access key"
 }
 
-variable "member" {
+variable "cf_member" {
   default = ""
   description = "Cloud Function invoker"
   type = string
