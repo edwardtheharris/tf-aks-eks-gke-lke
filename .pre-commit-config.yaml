@@ -35,6 +35,34 @@ repos:
           - >-
             --output-file=index.md
           - >-
+            ./aks
+        id: terraform-docs-go
+      - args:
+          - >-
+            markdown
+          - >-
+            document
+          - >-
+            --anchor=false
+          - >-
+            --escape=false
+          - >-
+            --output-file=index.md
+          - >-
+            ./eks
+        id: terraform-docs-go
+      - args:
+          - >-
+            markdown
+          - >-
+            document
+          - >-
+            --anchor=false
+          - >-
+            --escape=false
+          - >-
+            --output-file=index.md
+          - >-
             ./gke
         id: terraform-docs-go
     repo: https://github.com/terraform-docs/terraform-docs
