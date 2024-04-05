@@ -70,13 +70,13 @@ No resources.
 
 The following input variables are required:
 
-### sp\_client\_id
+### sp_client_id
 
 Description: n/a
 
 Type: `string`
 
-### sp\_client\_secret
+### sp_client_secret
 
 Description: n/a
 
@@ -86,7 +86,7 @@ Type: `string`
 
 The following input variables are optional (have default values):
 
-### AWS\_ACCESS\_KEY\_ID
+### AWS_ACCESS_KEY_ID
 
 Description: Access key ID
 
@@ -94,7 +94,7 @@ Type: `string`
 
 Default: `""`
 
-### AWS\_SECRET\_ACCESS\_KEY
+### AWS_SECRET_ACCESS_KEY
 
 Description: AWS secret access key
 
@@ -102,7 +102,7 @@ Type: `string`
 
 Default: `""`
 
-### aws\_region
+### aws_region
 
 Description: The region in which the EKS cluster will be deployed.
 
@@ -110,7 +110,7 @@ Type: `string`
 
 Default: `"us-west-2"`
 
-### cf\_member
+### cf_member
 
 Description: Cloud Function invoker
 
@@ -118,7 +118,7 @@ Type: `string`
 
 Default: `""`
 
-### project\_id
+### project_id
 
 Description: Goole Cloud project ID
 
