@@ -34,10 +34,10 @@ resource "google_cloudfunctions_function" "hello-world" {
 
 # IAM entry for members to invoke the function
 resource "google_cloudfunctions_function_iam_binding" "binding" {
-  project = google_cloudfunctions_function.hello-world.project
-  region = google_cloudfunctions_function.hello-world.region
+  project        = google_cloudfunctions_function.hello-world.project
+  region         = google_cloudfunctions_function.hello-world.region
   cloud_function = google_cloudfunctions_function.hello-world.name
-  role = "roles/viewer"
+  role           = "roles/viewer"
   members = [
     var.cf_member,
   ]

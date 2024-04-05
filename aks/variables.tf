@@ -10,7 +10,7 @@ variable "location" {
 
 variable "member" {
   default = ""
-  type = string
+  type    = string
 }
 
 variable "node_count" {

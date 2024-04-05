@@ -16,7 +16,7 @@ variable "AWS_SECRET_ACCESS_KEY" {
 }
 
 variable "cf_member" {
-  default = ""
+  default     = ""
   description = "Cloud Function invoker"
 }
 
