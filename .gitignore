@@ -1,3 +1,9 @@
-.terraform/
+__pycache__/
+.coverage
 .terraform.lock.hcl
+.terraform/
 *.tfvars
+*.xml
+pylint.lint
+pylint.out
+tflint.json

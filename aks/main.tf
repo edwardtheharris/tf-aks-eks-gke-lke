@@ -11,7 +11,7 @@ terraform {
     hostname = "app.terraform.io"
 
     workspaces {
-      tags = ["kubernetes"]
+      tags = ["kubernetes", "aks"]
     }
   }
 }

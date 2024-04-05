@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "5.43.0"
+      version = ">= 5.42.0"
     }
   }
   cloud {
@@ -11,7 +11,7 @@ terraform {
     hostname = "app.terraform.io"
 
     workspaces {
-      tags = ["kubernetes"]
+      tags = ["kubernetes", "eks"]
     }
   }
 }

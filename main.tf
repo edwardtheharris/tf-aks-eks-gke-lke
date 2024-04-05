@@ -1,8 +1,16 @@
 terraform {
   required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "5.42.0"
+    }
     azurerm = {
       source  = "hashicorp/azurerm"
       version = "3.97.1"
+    }
+    google = {
+      source  = "hashicorp/google"
+      version = "5.22.0"
     }
   }
   cloud {
@@ -30,4 +38,11 @@ module "aks" {
 
 module "eks" {
   source = "./eks"
+}
+
+module "gke" {
+  cf_member = var.cf_member
+  project_id = var.project_id
+  region = var.region
+  source = "./gke"
 }
