@@ -29,6 +29,8 @@ repos:
           - >-
             --anchor=false
           - >-
+            --escape=false
+          - >-
             --output-file=index.md
           - >-
             ./gke
