@@ -20,12 +20,14 @@ jobs:
       - uses: actions/setup-python@main
         with:
           python-version: ${{ matrix.python-version }}
+      - uses: terraform-linters/setup-tflint@master
       - run: |
           pip3 install -U pip pipenv
           pipenv requirements --dev > reqs
           pip3 install -r reqs
           pytest --cov --cov-report=xml
-          pylint --output-format=parseable --output=pylint.md
+          pylint --output-format=parseable --output=pylint.lint
+          sed -i -e "s/project_version/$(cat .version)-$(git rev-parse --short=6 HEAD)/g" sonar-project.properties
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
