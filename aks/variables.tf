@@ -8,6 +8,11 @@ variable "location" {
   default = "West US 3"
 }
 
+variable "member" {
+  default = ""
+  type = string
+}
+
 variable "node_count" {
   type    = number
   default = 1

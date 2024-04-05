@@ -14,3 +14,8 @@ variable "AWS_SECRET_ACCESS_KEY" {
   default     = ""
   description = "AWS secret access key"
 }
+
+variable "member" {
+  default = ""
+  type = string
+}
