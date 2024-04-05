@@ -26,6 +26,8 @@ A stub of this code has been added to the {file}`eks` folder.
 [Linode Kubernetes Engine](https://registry.terraform.io/providers/linode/linode/latest/docs/resources/lke_cluster)
 
 <!-- BEGIN_TF_DOCS -->
+<!-- markdownlint-disable -->
+
 ## Requirements
 
 The following requirements are needed by this module:
@@ -70,7 +72,7 @@ No resources.
 
 The following input variables are required:
 
-### sp\_client\_id
+### sp_client_id
 
 Description: n/a
 
@@ -102,7 +104,7 @@ Type: `string`
 
 Default: `""`
 
-### aws\_region
+### aws_region
 
 Description: The region in which the EKS cluster will be deployed.
 
@@ -110,7 +112,7 @@ Type: `string`
 
 Default: `"us-west-2"`
 
-### project\_id
+### project_id
 
 Description: Goole Cloud project ID
 
