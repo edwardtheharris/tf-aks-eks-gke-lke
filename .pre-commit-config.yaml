@@ -17,9 +17,9 @@ repos:
           - >-
             --anchor=false
           - >-
-            --output-file
+            --output-file=README.md
           - >-
-            README.md
+            ./
         id: terraform-docs-go
       - args:
           - >-
@@ -29,9 +29,9 @@ repos:
           - >-
             --anchor=false
           - >-
-            --output-file=gke/index.md
+            --output-file=index.md
           - >-
-            ./gke/
+            ./gke
         id: terraform-docs-go
     repo: https://github.com/terraform-docs/terraform-docs
     rev: v0.17.0

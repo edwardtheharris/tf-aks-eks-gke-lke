@@ -12,7 +12,6 @@ variable "AWS_SECRET_ACCESS_KEY" {
 variable "cf_member" {
   default = ""
   description = "Function executor"
-  type = string
 }
 
 variable "project_id" {

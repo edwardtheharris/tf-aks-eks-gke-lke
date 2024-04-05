@@ -18,7 +18,6 @@ variable "AWS_SECRET_ACCESS_KEY" {
 variable "cf_member" {
   default = ""
   description = "Cloud Function invoker"
-  type = string
 }
 
 variable "project_id" {
