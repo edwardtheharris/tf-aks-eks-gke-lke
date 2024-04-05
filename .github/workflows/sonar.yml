@@ -25,7 +25,7 @@ jobs:
           pipenv requirements --dev > reqs
           pip3 install -r reqs
           pytest --cov --cov-report=xml
-
+          pylint --output-format=parseable --output=pylint.md
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
