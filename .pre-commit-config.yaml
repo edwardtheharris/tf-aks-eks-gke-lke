@@ -17,6 +17,8 @@ repos:
           - >-
             --anchor=false
           - >-
+            --escape=false
+          - >-
             --output-file=README.md
           - >-
             ./
