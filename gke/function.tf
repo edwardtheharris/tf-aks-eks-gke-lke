@@ -42,8 +42,8 @@ resource "google_cloudfunctions_function" "hello-world" {
   }
 }
 
-resource "google_project_iam_member" "invoker" {
-    role = "roles/cloudfunctions.invoker"
-    member = var.member
-    project = var.project_id
-}
+# resource "google_project_iam_member" "invoker" {
+#     role = "roles/cloudfunctions.invoker"
+#     member = var.cf_member
+#     project = var.project_id
+# }
