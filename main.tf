@@ -43,5 +43,6 @@ module "eks" {
 module "gke" {
   project_id = var.project_id
   region = var.region
+  member = var.member
   source = "./gke"
 }
