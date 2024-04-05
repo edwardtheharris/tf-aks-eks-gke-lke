@@ -14,17 +14,6 @@ resource "google_storage_bucket_object" "archive" {
   bucket = google_storage_bucket.remote-dev.name
   source = "./"
 }
-
-# IAM entry for members to invoke the function
-resource "google_cloudfunctions_function_iam_binding" "binding" {
-  project = google_cloudfunctions_function.function.project
-  region = google_cloudfunctions_function.function.region
-  cloud_function = google_cloudfunctions_function.function.name
-  role = "roles/viewer"
-  members = [
-    var.cf_member,
-  ]
-}
 resource "google_cloudfunctions_function" "hello-world" {
   name        = "helloworld"
   description = "Hello, world!"
@@ -40,4 +29,16 @@ resource "google_cloudfunctions_function" "hello-world" {
   labels = {
     name = "hello-world"
   }
+}
+
+
+# IAM entry for members to invoke the function
+resource "google_cloudfunctions_function_iam_binding" "binding" {
+  project = google_cloudfunctions_function.hello-world.project
+  region = google_cloudfunctions_function.hello-world.region
+  cloud_function = google_cloudfunctions_function.hello-world.name
+  role = "roles/viewer"
+  members = [
+    var.cf_member,
+  ]
 }
