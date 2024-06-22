@@ -35,11 +35,6 @@ jobs:
           sed -i -e "s/project_version/$(cat .version)-$(git rev-parse --short=6 HEAD)/g" sonar-project.properties
       - name: Run TFLint
         run: tflint --recursive -f json > tflint.json || true
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - name: Coveralls
         uses: coverallsapp/github-action@v2
         with:
