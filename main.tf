@@ -6,7 +6,7 @@ terraform {
     }
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "3.109.0"
+      version = "3.110.0"
     }
     google = {
       source  = "hashicorp/google"
