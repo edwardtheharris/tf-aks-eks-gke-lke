@@ -1,39 +1,56 @@
-variable "aks_cluster_name" {
+variable "azAksClusterName" {
   type    = string
   default = "tf-aks"
 }
 
-variable "location" {
-  type    = string
-  default = "West US 3"
-}
-
-variable "member" {
-  default = ""
+variable "azAppId" {
+  default     = ""
+  description = "Azure Kubernetes Service Cluster service principal"
   type = string
 }
 
-variable "node_count" {
+variable "azLocation" {
+  default     = "westus3"
+  description = "Display name for deployment location"
+  type        = string
+}
+
+variable "azNodeCount" {
   type    = number
   default = 1
 }
 
-variable "resource_group_name" {
-  type    = string
-  default = "tf-aks-gh"
+variable "azPassword" {
+  default     = ""
+  description = "Azure Kubernetes Service Cluster password"
+  type        = string
 }
 
-variable "sp_client_id" {
-  default = ""
-  type    = string
+variable "azResourceGroupName" {
+  default     = "tf-aks-gh"
+  description = "Resource group name"
+  type        = string
 }
 
-variable "sp_client_secret" {
-  default = ""
-  type    = string
+variable "azSpDisplayName" {
+  default     = "tf-aks-gh"
+  description = "Service principal display name"
+  type        = string
 }
 
-variable "vm_size" {
+variable "azSubscriptionId" {
+  default     = ""
+  description = "Azure Subscription ID"
+  type        = string
+}
+
+variable "azTenant" {
+  default     = ""
+  description = "The tenant id for the service principal"
+  type        = string
+}
+
+variable "azVmSize" {
   type    = string
   default = "Standard_B2s"
 }
