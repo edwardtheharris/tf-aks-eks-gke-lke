@@ -16,7 +16,7 @@ variable "AWS_SECRET_ACCESS_KEY" {
 }
 
 variable "cf_member" {
-  default = ""
+  default     = ""
   description = "Cloud Function invoker"
 }
 
@@ -30,10 +30,31 @@ variable "region" {
   description = "Google Cloud region"
 }
 
-variable "sp_client_id" {
-  type = string
+variable "azAppId" {
+  default     = ""
+  description = "Azure SP ID"
+  type        = string
 }
 
-variable "sp_client_secret" {
-  type = string
+variable "azPassword" {
+  default     = ""
+  description = "Azure SP Password"
+  type        = string
+}
+
+variable "azSpDisplayName" {
+  default     = "tf-aks-gh"
+  description = "Service principal display name"
+  type        = string
+}
+
+variable "azSubscriptionId" {
+  default     = ""
+  description = "Azure Subscription ID"
+  type        = string
+}
+variable "azTenant" {
+  default     = ""
+  description = "Azure Tenant"
+  type        = string
 }

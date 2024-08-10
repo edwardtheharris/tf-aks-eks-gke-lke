@@ -27,13 +27,13 @@ terraform {
 module "aks" {
   source = "./aks"
 
-  sp_client_id        = var.sp_client_id
-  sp_client_secret    = var.sp_client_secret
-  resource_group_name = "tf-aks-gh"
-  aks_cluster_name    = "tf-aks"
-  location            = "West US 3"
-  node_count          = 1
-  vm_size             = "Standard_B2s"
+  azAppId             = var.azAppId
+  azPassword          = var.azPassword
+  azResourceGroupName = "tf-aks-gh"
+  azAksClusterName    = "tf-aks"
+  azLocation          = "westus3"
+  azNodeCount         = 1
+  azVmSize            = "Standard_B2s"
 }
 
 module "eks" {
@@ -41,8 +41,8 @@ module "eks" {
 }
 
 module "gke" {
-  cf_member = var.cf_member
+  cf_member  = var.cf_member
   project_id = var.project_id
-  region = var.region
-  source = "./gke"
+  region     = var.region
+  source     = "./gke"
 }

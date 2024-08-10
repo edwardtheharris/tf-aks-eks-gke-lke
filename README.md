@@ -11,6 +11,20 @@ title: Terraform AKS / EKS / GKE / LKE
 
 A stub of this code has been added to the {file}`aks` folder.
 
+You've got to set environment variables in TFC as described in
+[this](https://stackoverflow.com/questions/72681536/azure-cli-path-error-running-in-terraform-cloud)
+very helpful StackOverflow post.
+
+```shell
+ARM_CLIENT_ID=APPID
+ARM_CLIENT_SECRET=APP_PASSWORD
+ARM_SUBSCRIPTION_ID=SUB_ID
+ARM_TENANT_ID=TENANT_ID
+```
+
+More information is available
+[here](https://developer.hashicorp.com/terraform/tutorials/azure-get-started/azure-build#set-your-environment-variables).
+
 ## EKS
 
 A stub of this code has been added to the {file}`eks` folder.

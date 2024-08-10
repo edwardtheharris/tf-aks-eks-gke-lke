@@ -1,4 +1,5 @@
 __pycache__/
+.gnupg/
 .coverage
 .terraform.lock.hcl
 .terraform/
