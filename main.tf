@@ -2,15 +2,15 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "5.42.0"
+      version = "5.62.0"
     }
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "3.97.1"
+      version = "4.1.0"
     }
     google = {
       source  = "hashicorp/google"
-      version = "5.22.0"
+      version = "6.2.0"
     }
   }
   cloud {
@@ -27,13 +27,13 @@ terraform {
 module "aks" {
   source = "./aks"
 
-  sp_client_id        = var.sp_client_id
-  sp_client_secret    = var.sp_client_secret
-  resource_group_name = "tf-aks-gh"
-  aks_cluster_name    = "tf-aks"
-  location            = "West US 3"
-  node_count          = 1
-  vm_size             = "Standard_B2s"
+  azAppId             = var.azAppId
+  azPassword          = var.azPassword
+  azResourceGroupName = "tf-aks-gh"
+  azAksClusterName    = "tf-aks"
+  azLocation          = "westus3"
+  azNodeCount         = 1
+  azVmSize            = "Standard_B2s"
 }
 
 module "eks" {

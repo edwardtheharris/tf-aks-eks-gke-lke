@@ -2,7 +2,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "3.97.1"
+      version = "4.1.0"
     }
   }
   cloud {
@@ -16,36 +16,37 @@ terraform {
   }
 }
 
+/**
+  * This is only required when the User, Service Principal, or Identity
+  * running Terraform lacks the permissions to register Azure Resource
+  * Providers.
+  */
 provider "azurerm" {
-  skip_provider_registration = true # This is only required when the User, Service Principal, or Identity running Terraform lacks the permissions to register Azure Resource Providers.
   features {}
 }
-
 resource "azurerm_resource_group" "aks_rg" {
-  name     = var.resource_group_name
-  location = var.location
+  name     = var.azResourceGroupName
+  location = var.azLocation
 }
 
 resource "azurerm_kubernetes_cluster" "aks_cluster" {
-  name                = var.aks_cluster_name
+  name                = var.azAksClusterName
   location            = azurerm_resource_group.aks_rg.location
   resource_group_name = azurerm_resource_group.aks_rg.name
-  dns_prefix          = var.aks_cluster_name
+  dns_prefix          = var.azAksClusterName
 
   default_node_pool {
     name       = "default"
-    node_count = var.node_count
-    vm_size    = var.vm_size
+    node_count = var.azNodeCount
+    vm_size    = var.azVmSize
   }
 
   service_principal {
-    client_id     = var.sp_client_id
-    client_secret = var.sp_client_secret
+    client_id     = var.azAppId
+    client_secret = var.azPassword
   }
 
-  # role_based_access_control {
-  #   enabled = true
-  # }
+  role_based_access_control_enabled = true
 
   tags = {
     environment = "dev"
