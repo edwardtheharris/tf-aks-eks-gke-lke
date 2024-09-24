@@ -47,7 +47,7 @@ No required inputs.
 
 The following input variables are optional (have default values):
 
-### AWS\_ACCESS\_KEY\_ID
+### AWS_ACCESS_KEY_ID
 
 Description: Access key ID
 
@@ -55,7 +55,7 @@ Type: `string`
 
 Default: `""`
 
-### AWS\_SECRET\_ACCESS\_KEY
+### AWS_SECRET_ACCESS_KEY
 
 Description: AWS secret access key
 
@@ -63,21 +63,13 @@ Type: `string`
 
 Default: `""`
 
-### aws\_region
+### aws_region
 
 Description: The region in which the EKS cluster will be deployed.
 
 Type: `string`
 
 Default: `"us-west-2"`
-
-### member
-
-Description: n/a
-
-Type: `string`
-
-Default: `""`
 
 ## Outputs
 
