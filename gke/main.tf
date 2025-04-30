@@ -33,8 +33,8 @@ resource "google_container_cluster" "primary" {
 
   private_cluster_config {
     enable_private_endpoint = true
-    enable_private_nodes = true
-    master_ipv4_cidr_block = "10.0.0.0/28"
+    enable_private_nodes    = true
+    master_ipv4_cidr_block  = "10.0.0.0/28"
   }
   # We can't create a cluster with no node pool defined, but we want to only use
   # separately managed node pools. So we create the smallest possible default

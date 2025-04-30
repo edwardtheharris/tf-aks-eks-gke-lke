@@ -42,7 +42,7 @@ No required inputs.
 
 The following input variables are optional (have default values):
 
-### aks\_cluster\_name
+### aks_cluster_name
 
 Description: n/a
 
@@ -66,7 +66,7 @@ Type: `string`
 
 Default: `""`
 
-### node\_count
+### node_count
 
 Description: n/a
 
@@ -74,7 +74,7 @@ Type: `number`
 
 Default: `1`
 
-### resource\_group\_name
+### resource_group_name
 
 Description: n/a
 
@@ -82,7 +82,7 @@ Type: `string`
 
 Default: `"tf-aks-gh"`
 
-### sp\_client\_id
+### sp_client_id
 
 Description: n/a
 
@@ -90,7 +90,7 @@ Type: `string`
 
 Default: `""`
 
-### sp\_client\_secret
+### sp_client_secret
 
 Description: n/a
 
@@ -98,7 +98,7 @@ Type: `string`
 
 Default: `""`
 
-### vm\_size
+### vm_size
 
 Description: n/a
 
